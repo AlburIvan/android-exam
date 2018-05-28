@@ -1,8 +1,10 @@
-package com.raworkstudio.exam
+package com.raworkstudio.exam.features.home
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import androidx.navigation.findNavController
+import com.raworkstudio.exam.R
 
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -13,10 +15,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
     }
 
+    override fun onSupportNavigateUp() = findNavController(R.id.mainNavigationFragment).navigateUp()
 }

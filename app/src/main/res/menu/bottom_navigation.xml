@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/actionHome"
+        android:title="home" />
+
+    <item
+        android:id="@+id/actionDashboard"
+        android:title="dashboard" />
+
+    <item
+        android:id="@+id/actionNotifications"
+        android:title="notification" />
+</menu>
