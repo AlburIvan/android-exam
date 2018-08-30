@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android">
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/personDetailFragment">
 
+    <fragment
+        android:id="@+id/personDetailFragment"
+        android:name="com.raworkstudio.exam.features.person_detail.PersonDetailFragment"
+        android:label="fragment_person_detail"
+        tools:layout="@layout/fragment_person_detail" />
 </navigation>

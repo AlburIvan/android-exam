@@ -4,11 +4,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.raworkstudio.exam"
         minSdkVersion 26
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         resConfigs "en", "es"
@@ -22,8 +22,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8;
-        targetCompatibility JavaVersion.VERSION_1_8;
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     sourceSets {
@@ -32,6 +32,7 @@ android {
 
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -39,7 +40,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Android Support
+    //noinspection GradleDependency
     implementation "com.android.support:appcompat-v7:$googleSupport"
+    implementation "com.android.support:design:28.0.0-rc01"
+    //noinspection GradleDependency
     implementation "com.android.support:recyclerview-v7:$googleSupport"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayout"
 
@@ -56,7 +60,8 @@ dependencies {
     // Room
     implementation "android.arch.persistence.room:runtime:$roomVersion"
     implementation "android.arch.persistence.room:rxjava2:$roomVersion"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayout"
+//    implementation 'com.android.support:support-v4:27.1.1'
     annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"
 
     // Retrofit 2
@@ -68,11 +73,16 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
 
     // Dagger 2
-    implementation "com.google.dagger:dagger:$daggerVersion"
-    implementation "com.google.dagger:dagger-android:$daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
-    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+//    implementation "com.google.dagger:dagger:$daggerVersion"
+//    implementation "com.google.dagger:dagger-android:$daggerVersion"
+//    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+//    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+//    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    // Koin
+    implementation "org.koin:koin-core:$koinVersion"
+    implementation "org.koin:koin-android:$koinVersion"
+    implementation "org.koin:koin-android-architecture:$koinVersion"
 
     // Flexbox
     // Implementation 'com.google.android:flexbox:1.0.0'
@@ -83,5 +93,6 @@ dependencies {
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 
 }
